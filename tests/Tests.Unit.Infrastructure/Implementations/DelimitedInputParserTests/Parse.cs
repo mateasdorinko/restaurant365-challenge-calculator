@@ -4,7 +4,7 @@ public class Parse
 {
     private readonly DelimitedInputParser _delimitedInputParser = new();
     
-    [Fact(Skip = "Removed exception requirement")]
+    [Fact(Skip = "Removed delimited list count over 2 exception requirement")]
     public void providing_more_than_two_delimited_values_throws_delimitedvaluecountexceededexception()
     {
         // arrange
@@ -73,5 +73,18 @@ public class Parse
         Assert.Equal(1, result[0]);
         Assert.Equal(2, result[1]);
         Assert.Equal(3, result[2]);
+    }
+
+    [Fact]
+    public void negative_numbers_within_delimited_list_throws_delimitednegativevalueexception()
+    {
+        // arrange
+        const string input = "1,2,3,4,-5,-6,7,8,-9";
+
+        // act
+        var exception = Assert.Throws<DelimitedNegativeValueException>(() => { _delimitedInputParser.Parse(input); });
+
+        // assert
+        Assert.Equal("Negative delimited values are not allowed. The following negative values have been identified: [-5, -6, -9]", exception.Message);
     }
 }

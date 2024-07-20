@@ -30,7 +30,7 @@ public class Add
         Assert.Equal(5001, result);
     }
 
-    [Fact]
+    [Fact(Skip = "Removed negative numbers as valid delimited values.")]
     public void providing_multiple_values_with_negative_returns_sum()
     {
         // arrange
@@ -54,5 +54,15 @@ public class Add
 
         // assert
         Assert.Equal(78, result);
+    }
+
+    [Fact]
+    public void providing_negative_delimited_values_throws_delimitednegativevalueexception()
+    {
+        // arrange
+        const string input = "1,2,3,4,-5,-6,7,8,-9";
+        
+        // act & assert
+        var exception = Assert.Throws<DelimitedNegativeValueException>(() => { _calculator.Add(input); });
     }
 }

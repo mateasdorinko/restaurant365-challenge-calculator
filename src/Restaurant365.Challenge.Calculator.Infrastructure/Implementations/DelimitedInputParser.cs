@@ -6,7 +6,7 @@ public class DelimitedInputParser : IDelimitedInputParser
     {
         var numbers = new List<int>();
         var delimited = input.Split([',', '\n']);
-        
+
         // if (delimited is { Length: > 2 }) { throw new DelimitedValueCountExceededException(); }
 
         if (delimited.Length == 0)
@@ -20,6 +20,9 @@ public class DelimitedInputParser : IDelimitedInputParser
             var success = int.TryParse(value, out var number);
             numbers.Add(success ? number : 0);
         }
+
+        var negativeNumbers = numbers.Where(x => x < 0).ToList();
+        if (negativeNumbers.Count != 0) { throw new DelimitedNegativeValueException(negativeNumbers); }
 
         return numbers;
     }
