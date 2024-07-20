@@ -78,4 +78,43 @@ public class Add
         // assert
         Assert.Equal(8, result);
     }
+
+    [Fact]
+    public void delimited_list_by_newline_character_is_supported()
+    {
+        // arrange
+        const string input = "1\n2,3";
+
+        // act
+        var result = _calculator.Add(input);
+
+        // assert
+        Assert.Equal(6, result);
+    }
+
+    [Fact]
+    public void delimited_list_with_pound_character_is_supported()
+    {
+        // arrange
+        const string input = "//#\n2#5";
+
+        // act
+        var result = _calculator.Add(input);
+
+        // assert
+        Assert.Equal(7, result);
+    }
+
+    [Fact]
+    public void delimited_list_with_pound_and_invalid_characters_supported()
+    {
+        // arrange
+        const string input = "//,\n2,ff,100";
+
+        // act
+        var result = _calculator.Add(input);
+
+        // assert
+        Assert.Equal(102, result);
+    }
 }

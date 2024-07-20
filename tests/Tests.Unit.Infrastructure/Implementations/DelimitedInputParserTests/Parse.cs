@@ -87,4 +87,20 @@ public class Parse
         // assert
         Assert.Equal("Negative delimited values are not allowed. The following negative values have been identified: [-5, -6, -9]", exception.Message);
     }
+
+    [Fact]
+    public void pound_symbol_is_supported_delimiter()
+    {
+        // arrange
+        const string input = "1#2,3";
+
+        // act
+        var result = _delimitedInputParser.Parse(input);
+
+        // assert
+        Assert.Equal(3, result.Count);
+        Assert.Equal(1, result[0]);
+        Assert.Equal(2, result[1]);
+        Assert.Equal(3, result[2]);
+    }
 }
