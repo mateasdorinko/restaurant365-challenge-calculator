@@ -42,4 +42,17 @@ public class Add
         // assert
         Assert.Equal(1, result);
     }
+
+    [Fact]
+    public void providing_multiple_values_past_ceiling_limit_returns_sum()
+    {
+        // arrange
+        const string input = "1,2,3,4,5,6,7,8,9,10,11,12";
+        
+        // act
+        var result = _calculator.Add(input);
+
+        // assert
+        Assert.Equal(78, result);
+    }
 }

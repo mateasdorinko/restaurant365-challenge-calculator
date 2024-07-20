@@ -1,5 +1,3 @@
-using Restaurant365.Challenge.Calculator.Application.Exceptions;
-
 namespace Restaurant365.Challenge.Calculator.Infrastructure.Implementations;
 
 public class DelimitedInputParser : IDelimitedInputParser
@@ -9,7 +7,7 @@ public class DelimitedInputParser : IDelimitedInputParser
         var numbers = new List<int>();
         var delimited = input.Split(',');
         
-        if (delimited is { Length: > 2 }) { throw new DelimitedValueCountExceededException(); }
+        // if (delimited is { Length: > 2 }) { throw new DelimitedValueCountExceededException(); }
 
         if (delimited.Length == 0)
         {
