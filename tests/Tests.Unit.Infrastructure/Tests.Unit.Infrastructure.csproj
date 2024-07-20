@@ -20,4 +20,8 @@
         <Using Include="Xunit"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\Restaurant365.Challenge.Calculator.Infrastructure\Restaurant365.Challenge.Calculator.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>

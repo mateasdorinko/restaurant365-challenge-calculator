@@ -9,14 +9,8 @@ using var scope = host.Services.CreateScope();
 
 var services = scope.ServiceProvider;
 
-try
-{
-    services.GetRequiredService<App>().Run(args);
-}
-catch (Exception e)
-{
-    Console.WriteLine(e);
-}
+try { services.GetRequiredService<App>().Run(args); }
+catch (Exception e) { Console.WriteLine(e); }
 
 return;
 
@@ -25,6 +19,7 @@ static IHostBuilder CreateHostBuilder(string[] args)
     return Host.CreateDefaultBuilder(args).ConfigureServices((_, services) =>
     {
         services.AddSingleton<ICalculator, Calculator>();
+        services.AddSingleton<IDelimitedInputParser, DelimitedInputParser>();
         services.AddSingleton<App>();
     });
 }

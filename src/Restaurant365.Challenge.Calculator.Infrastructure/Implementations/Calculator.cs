@@ -1,11 +1,12 @@
-using Restaurant365.Challenge.Calculator.Application.Interfaces;
-
 namespace Restaurant365.Challenge.Calculator.Infrastructure.Implementations;
 
-public class Calculator : ICalculator
+public class Calculator(IDelimitedInputParser delimitedInputParser) : ICalculator
 {
-    public int Add(string commaDelimitedNumbers)
+    private readonly IDelimitedInputParser _delimitedInputParser = delimitedInputParser;
+
+    public int Add(string commaDelimitedInput)
     {
-        throw new NotImplementedException();
+        var numbers = _delimitedInputParser.Parse(commaDelimitedInput);
+        return numbers.Sum();
     }
 }
