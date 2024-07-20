@@ -17,7 +17,7 @@ public class Add
         Assert.Equal(20, result);
     }
 
-    [Fact]
+    [Fact(Skip = "Values over 1000 are no longer valid. (Requirement 5)")]
     public void providing_multiple_positive_values_returns_sum()
     {
         // arrange
@@ -30,7 +30,7 @@ public class Add
         Assert.Equal(5001, result);
     }
 
-    [Fact(Skip = "Removed negative numbers as valid delimited values.")]
+    [Fact(Skip = "Removed negative numbers as valid delimited values. (Requirement 4)")]
     public void providing_multiple_values_with_negative_returns_sum()
     {
         // arrange
@@ -64,5 +64,18 @@ public class Add
         
         // act & assert
         var exception = Assert.Throws<DelimitedNegativeValueException>(() => { _calculator.Add(input); });
+    }
+
+    [Fact]
+    public void numbers_greater_than_1000_will_be_treated_as_invalid_and_assumed_zero()
+    {
+        // arrange
+        const string input = "2,1001,6";
+
+        // act
+        var result = _calculator.Add(input);
+
+        // assert
+        Assert.Equal(8, result);
     }
 }

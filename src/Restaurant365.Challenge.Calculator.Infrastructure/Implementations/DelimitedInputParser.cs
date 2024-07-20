@@ -18,7 +18,7 @@ public class DelimitedInputParser : IDelimitedInputParser
         foreach (var value in delimited)
         {
             var success = int.TryParse(value, out var number);
-            numbers.Add(success ? number : 0);
+            numbers.Add(success && number <= 1000 ? number : 0);
         }
 
         var negativeNumbers = numbers.Where(x => x < 0).ToList();

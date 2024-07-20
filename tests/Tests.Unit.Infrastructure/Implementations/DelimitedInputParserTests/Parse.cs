@@ -4,7 +4,7 @@ public class Parse
 {
     private readonly DelimitedInputParser _delimitedInputParser = new();
     
-    [Fact(Skip = "Removed delimited list count over 2 exception requirement")]
+    [Fact(Skip = "Removed delimited list count over 2 exception requirement. (Requirement 2)")]
     public void providing_more_than_two_delimited_values_throws_delimitedvaluecountexceededexception()
     {
         // arrange
