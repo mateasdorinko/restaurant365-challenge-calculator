@@ -58,4 +58,20 @@ public class Parse
         Assert.Equal(2, result.Count);
         Assert.Equal(0, result[1]);
     }
+
+    [Fact]
+    public void newline_character_is_supported_delimiter()
+    {
+        // arrange
+        const string input = "1\n2,3";
+
+        // act
+        var result = _delimitedInputParser.Parse(input);
+
+        // assert
+        Assert.Equal(3, result.Count);
+        Assert.Equal(1, result[0]);
+        Assert.Equal(2, result[1]);
+        Assert.Equal(3, result[2]);
+    }
 }

@@ -5,7 +5,7 @@ public class DelimitedInputParser : IDelimitedInputParser
     public IList<int> Parse(string input)
     {
         var numbers = new List<int>();
-        var delimited = input.Split(',');
+        var delimited = input.Split([',', '\n']);
         
         // if (delimited is { Length: > 2 }) { throw new DelimitedValueCountExceededException(); }
 
