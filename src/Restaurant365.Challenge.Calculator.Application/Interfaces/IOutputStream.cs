@@ -1,6 +1,6 @@
 namespace Restaurant365.Challenge.Calculator.Application.Interfaces;
 
-public interface ICalculator
+public interface IOutputStream
 {
-    int Add(string delimitedInput);
+    void Write(string output);
 }

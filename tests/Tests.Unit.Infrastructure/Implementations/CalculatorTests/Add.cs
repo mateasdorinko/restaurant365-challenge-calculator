@@ -2,7 +2,7 @@ namespace Tests.Unit.Infrastructure.Implementations.CalculatorTests;
 
 public class Add
 {
-    private readonly Calculator _calculator = new Calculator(new DelimitedInputParser());
+    private readonly Calculator _calculator = new Calculator(new DelimitedInputParser(), new EmptyOutputStream());
 
     [Fact]
     public void providing_a_single_numeric_delimited_value_returns_the_same_value()
