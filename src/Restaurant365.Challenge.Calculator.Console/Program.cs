@@ -20,6 +20,7 @@ static IHostBuilder CreateHostBuilder(string[] args)
     {
         services.AddSingleton<ICalculator, Calculator>();
         services.AddSingleton<IDelimitedInputParser, DelimitedInputParser>();
+        services.AddSingleton<IOutputStream, ConsoleOutputStream>();
         services.AddSingleton<App>();
     });
 }
