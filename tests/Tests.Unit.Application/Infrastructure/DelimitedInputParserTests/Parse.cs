@@ -1,10 +1,10 @@
-namespace Tests.Unit.Infrastructure.Implementations.DelimitedInputParserTests;
+namespace Tests.Unit.Application.Infrastructure.DelimitedInputParserTests;
 
 public class Parse
 {
-    private readonly DelimitedInputParser _delimitedInputParser = new();
-    
-    [Fact(Skip = "Removed delimited list count over 2 exception requirement. (Requirement 2)")]
+    private readonly IDelimitedInputParser _delimitedInputParser = new DelimitedInputParser();
+
+    /*[Fact(Skip = "Removed delimited list count over 2 exception requirement. (Requirement 2)")]
     public void providing_more_than_two_delimited_values_throws_delimitedvaluecountexceededexception()
     {
         // arrange
@@ -15,7 +15,7 @@ public class Parse
 
         // assert
         Assert.Equal("More than 2 delimited items are not allowed.", exception.Message);
-    }
+    }*/
     
     [Fact]
     public void empty_input_should_result_in_single_item_with_value_of_zero()

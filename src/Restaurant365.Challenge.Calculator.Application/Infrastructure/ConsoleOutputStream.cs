@@ -1,4 +1,4 @@
-namespace Restaurant365.Challenge.Calculator.Infrastructure.Implementations;
+namespace Restaurant365.Challenge.Calculator.Application.Infrastructure;
 
 public class ConsoleOutputStream : IOutputStream
 {

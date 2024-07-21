@@ -1,2 +1,0 @@
-global using Restaurant365.Challenge.Calculator.Infrastructure.Implementations;
-global using Restaurant365.Challenge.Calculator.Application.Exceptions;

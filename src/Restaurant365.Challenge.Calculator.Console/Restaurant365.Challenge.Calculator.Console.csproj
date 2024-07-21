@@ -8,12 +8,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Restaurant365.Challenge.Calculator.Infrastructure\Restaurant365.Challenge.Calculator.Infrastructure.csproj" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
-      <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+      <ProjectReference Include="..\Restaurant365.Challenge.Calculator.Application\Restaurant365.Challenge.Calculator.Application.csproj" />
     </ItemGroup>
 
 </Project>

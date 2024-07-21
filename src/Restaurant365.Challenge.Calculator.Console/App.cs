@@ -1,5 +1,3 @@
-using Restaurant365.Challenge.Calculator.Application.Interfaces;
-
 namespace Restaurant365.Challenge.Calculator.Console;
 
 public class App(ICalculator calculator)
