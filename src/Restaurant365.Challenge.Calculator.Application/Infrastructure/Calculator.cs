@@ -12,4 +12,10 @@ public class Calculator(IDelimitedInputParser delimitedInputParser, IOutputStrea
 
         return sum;
     }
+
+    public int Subtract(string delimitedInput) { throw new NotImplementedException(); }
+
+    public int Multiply(string delimitedInput) { throw new NotImplementedException(); }
+
+    public int Divide(string delimitedInput) {  throw new NotImplementedException(); }
 }

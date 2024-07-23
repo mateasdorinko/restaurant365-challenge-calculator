@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace Restaurant365.Challenge.Calculator.Application.Infrastructure;
 
 public class DelimitedInputParser : IDelimitedInputParser
@@ -5,6 +7,7 @@ public class DelimitedInputParser : IDelimitedInputParser
     public IList<int> Parse(string input)
     {
         var numbers = new List<int>();
+        //var delimited = Regex.Split(input, "");
         var delimited = input.Split([',', '\n', '#']);
 
         // if (delimited is { Length: > 2 }) { throw new DelimitedValueCountExceededException(); }

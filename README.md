@@ -13,3 +13,14 @@ if a given test was no longer needed and removed. For brevity purposes I left th
 best practice would be to remove those tests.
 4. The examples provided in the requirements have been used as actual test scenarios, and 
 included in the test framework.
+
+#### Accomplished Tasks
+- Requirement 1
+- Requirement 2
+- Requirement 3
+- Requirement 4
+- Requirement 5
+- Requirement 6 *
+---
+- Stretch Goal 1
+- Stretch Goal 4
